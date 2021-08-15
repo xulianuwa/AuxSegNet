@@ -111,7 +111,7 @@ def crop(img_temp, dim, new_p=True, h_p=0, w_p=0):
 
 
 def get_data_from_chunk(chunk, args):
-    img_path = args.IMpath
+    img_path = args.img_path
 
     scale = np.random.uniform(0.7, 1.3)
     dim = args.crop_size
@@ -130,12 +130,9 @@ def get_data_from_chunk(chunk, args):
         flip_p = np.random.uniform(0, 1)
         img_temp = cv2.imread(os.path.join(img_path, piece + '.jpg'))
         img_temp = cv2.cvtColor(img_temp, cv2.COLOR_BGR2RGB).astype(np.float)
-        if args.SALpath[-2:] == 'GT':
-            sal_temp = cv2.imread(os.path.join(args.SALpath, piece + '.png'), 0).astype(np.float)
-        else:
-            sal_temp = cv2.imread(os.path.join(args.SALpath, piece + '.png'), 0) / 255.
+        sal_temp = cv2.imread(os.path.join(args.sal_pgt_path, piece + '.png'), 0) / 255.
 
-        gt_temp = np.asarray(Image.open(os.path.join(args.proxy_gt_path, piece + '.png')))
+        gt_temp = np.asarray(Image.open(os.path.join(args.seg_pgt_path, piece + '.png')))
         img_temp = scale_im(img_temp, scale)
         sal_temp = scale_im(sal_temp, scale)
         gt_temp = scale_gt(gt_temp, scale)

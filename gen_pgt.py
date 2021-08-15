@@ -21,13 +21,13 @@ if __name__ == '__main__':
     parser.add_argument("--gpu_id", type=str, default='0', help='GPU_id')
     parser.add_argument("--weights", default="", type=str)
     parser.add_argument("--network", default="AuxSegNet", type=str)
-    parser.add_argument("--LISTpath", default="./voc12/train_aug_id.txt", type=str)
+    parser.add_argument("--list_path", default="./voc12/train_aug_id.txt", type=str)
     parser.add_argument("--num_classes", default=21, type=int)
 
     parser.add_argument("--sal_pgt_path", default=None, type=str)
     parser.add_argument("--seg_pgt_path", default=None, type=str)
     parser.add_argument("--SALpath", default=None, type=str)
-    parser.add_argument("--IMpath", default="", type=str)
+    parser.add_argument("--img_path", default="", type=str)
 
 
     args = parser.parse_args()
@@ -46,8 +46,8 @@ if __name__ == '__main__':
     model.eval()
     model.cuda()
 
-    im_path = args.IMpath
-    img_list = open(args.LISTpath).readlines()
+    im_path = args.img_path
+    img_list = open(args.list_path).readlines()
 
     with torch.no_grad():
         for idx in tqdm(range(len(img_list))):

@@ -19,12 +19,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu_ids', type=str, default='0', help='GPU_id')
 
-    parser.add_argument("--LISTpath", default="voc12/train_aug_id.txt", type=str)
-    parser.add_argument("--TestLISTpath", default="voc12/val_id.txt", type=str)
-    parser.add_argument("--IMpath", default="", type=str)
-    parser.add_argument("--SAVEpath", default=None, type=str)
-    parser.add_argument("--SALpath", default=None, type=str)
-    parser.add_argument("--proxy_gt_path", default=None, type=str)
+    parser.add_argument("--list_path", default="voc12/train_aug_id.txt", type=str)
+    parser.add_argument("--img_path", default="", type=str)
+    parser.add_argument("--save_path", default=None, type=str)
+    parser.add_argument("--sal_pgt_path", default=None, type=str)
+    parser.add_argument("--seg_pgt_path", default=None, type=str)
 
     parser.add_argument("--batch_size", default=4, type=int)
     parser.add_argument("--num_classes", default=21, type=int)
@@ -49,10 +48,10 @@ if __name__ == '__main__':
     gpu_id = args.gpu_ids
     os.environ["CUDA_VISIBLE_DEVICES"] = gpu_id
 
-    save_path = args.SAVEpath
-    Path(args.SAVEpath).mkdir(parents=True, exist_ok=True)
+    save_path = args.save_path
+    Path(args.save_path).mkdir(parents=True, exist_ok=True)
 
-    pyutils.Logger(os.path.join(args.SAVEpath, args.session_name + '.log'))
+    pyutils.Logger(os.path.join(args.save_path, args.session_name + '.log'))
 
     criterion = torch.nn.CrossEntropyLoss(weight=None, ignore_index=255, reduction='elementwise_mean').cuda()
 
@@ -63,7 +62,7 @@ if __name__ == '__main__':
     model.load_state_dict(weights_dict, strict=False)
 
 
-    img_list = exutils.read_file(args.LISTpath)
+    img_list = exutils.read_file(args.list_path)
     train_size = len(img_list)
     max_step = (train_size // args.batch_size) * args.num_epochs
 

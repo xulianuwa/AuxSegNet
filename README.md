@@ -2,7 +2,7 @@
 
 The pytorch code for our ICCV 2021 paper [Leveraging Auxiliary Tasks with Affinity Learning for Weakly Supervised Semantic Segmentation](https://arxiv.org/abs/2107.11787).
 
-####Train the AuxSegNet
+#### Train the AuxSegNet
 
 ```
 python train_AuxAff.py --img_path 'Path to the training images'\
@@ -13,7 +13,7 @@ python train_AuxAff.py --img_path 'Path to the training images'\
 ```
 
 
-####Pseudo label updating
+#### Pseudo label updating
 ```
 python gen_pgt.py --weights 'path to the trained AuxSegNet weights'\   
                   --img_path 'Path to the training images'\

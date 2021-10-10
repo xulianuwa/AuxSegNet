@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import network.resnet38d
-from network.non_local import NLBlockND
+from network.non_local import NLBlock
 
 
 class Net(network.resnet38d.Net):
@@ -38,8 +38,8 @@ class Net(network.resnet38d.Net):
         self.sal_conv4 = nn.Conv2d(128, 1, (1, 1), bias=False)
         torch.nn.init.xavier_uniform_(self.sal_conv4.weight)
 
-        self.seg_att = NLBlockND(in_channels=128, inter_channels=128, dimension=2)
-        self.sal_att = NLBlockND(in_channels=128, inter_channels=128, dimension=2)
+        self.seg_att = NLBlock(in_channels=128, inter_channels=128)
+        self.sal_att = NLBlock(in_channels=128, inter_channels=128)
 
         self.seg_g = nn.Conv2d(128, 128, (1, 1))
         self.seg_W = nn.Conv2d(128, 128, (1, 1))

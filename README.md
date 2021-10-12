@@ -6,6 +6,16 @@ The pytorch code for our ICCV 2021 paper [Leveraging Auxiliary Tasks with Affini
   <img src="mis/framework2.jpg" width="720" title="" >
 </p>
 
+## Prerequisite
+- Ubuntu 18.04, with Python 3.6 and the following python dependencies.
+```
+pip install -r prerequisite.txt
+```
+- Download [the PASCAL VOC 2012 development kit](http://host.robots.ox.ac.uk/pascal/VOC/voc2012).
+
+## Usage
+
+
 #### 1. Prepare initial pseudo labels
 - Off-the-shelf saliency maps used as the initial saliency pseudo labels. [[DSS]](https://drive.google.com/open?id=1Ls2HBtg3jUiuk3WUuMtdUOVUFCgvE8IX)
 - Extract the class activation maps (CAM) from a pre-trained single-task classification network. [[ResNet38]](https://drive.google.com/file/d/1xESB7017zlZHqxEWuh1Rb89UhjTGIKOA/view?usp=sharing)

@@ -2,8 +2,8 @@
 
 The pytorch code for our ICCV 2021 paper [Leveraging Auxiliary Tasks with Affinity Learning for Weakly Supervised Semantic Segmentation](https://arxiv.org/abs/2107.11787).
 
-<p align="center">
-  <img src="mis/framework.jpg" width="350" title="hover text">
+<p align="left">
+  <img src="mis/framework.jpg" width="350" title="" >
 </p>
 
 #### 1. Prepare initial pseudo labels

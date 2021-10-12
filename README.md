@@ -50,7 +50,7 @@ python infer_AuxAff.py --img_path 'Path to the training images'\
 ```
 
 ## Citation
-Please cite our paper if the code is helpful.
+Please cite our paper if the code is helpful in your research and development.
 ```
 @inproceedings{xu2021leveraging,
   title={Leveraging Auxiliary Tasks with Affinity Learning for Weakly Supervised Semantic Segmentation},

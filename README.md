@@ -41,6 +41,10 @@ python gen_pgt.py --weights 'path to the trained AuxSegNet weights'\
 ```
 #### 4. Iterate Step 2 and 3
 
+#### (Optional) Integrated iterative model learning and label updating (Step 2-4) 
+```
+bash iter_learn.sh
+```
 #### 5. Inference
 ```
 python infer_AuxAff.py --img_path 'Path to the training images'\
@@ -48,6 +52,17 @@ python infer_AuxAff.py --img_path 'Path to the training images'\
                        --save_path 'Path to save the segmentation results'
 
 ```
+## Performance comparison with SOTA 
+
+| Method         | Val (mIoU)    | Test (mIoU)    | 
+| ------------- |:-------------:|:-----:|
+|ICD (CVPR20)|67.8|68.0|
+|Zhang et al. (ECCV20)|66.6|66.7|
+|Sun et al. (ECCV20)|66.2|66.9|
+| Li et al. (AAAI21)        | 68.2 | 68.5 | 
+| Yao et al. (CVPR21)     | 68.3 | 68.5 | 
+| AuxSegNet (ours)     | **69.0** | **68.6** | 
+
 
 ## Citation
 Please consider citing our paper if the code is helpful in your research and development.

@@ -56,15 +56,26 @@ python infer_AuxAff.py --img_path 'Path to the training images'\
 
 Segmentation results on the PASCAL VOC 2012 dataset
 
-| Method         | Val (mIoU)    | Test (mIoU)    | 
-| ------------- |:-------------:|:-----:|
-|ICD (CVPR20)|67.8|68.0|
-|Zhang et al. (ECCV20)|66.6|66.7|
-|Sun et al. (ECCV20)|66.2|66.9|
-| Li et al. (AAAI21)        | 68.2 | 68.5 | 
-| Yao et al. (CVPR21)     | 68.3 | 68.5 | 
-| AuxSegNet (ours)     | **69.0** | **68.6** | 
+<p align="left">
+  <img src="mis/sota_voc.png" width="300" title="" >
+</p>
 
+[comment]: <> (| Method         | Val &#40;mIoU&#41;    | Test &#40;mIoU&#41;    | )
+
+[comment]: <> (| ------------- |:-------------:|:-----:|)
+
+[comment]: <> (|ICD &#40;CVPR20&#41;|67.8|68.0|)
+
+[comment]: <> (|Zhang et al. &#40;ECCV20&#41;|66.6|66.7|)
+
+[comment]: <> (|Sun et al. &#40;ECCV20&#41;|66.2|66.9|)
+
+[comment]: <> (| AuxSegNet &#40;ours&#41;     | **69.0** | **68.6** | )
+
+Segmentation results on the MS COCO dataset
+<p align="left">
+  <img src="mis/sota_coco.png" width="300" title="" >
+</p>
 
 ## Citation
 Please consider citing our paper if the code is helpful in your research and development.

@@ -54,6 +54,8 @@ python infer_AuxAff.py --img_path 'Path to the training images'\
 ```
 ## Performance comparison with SOTA 
 
+Segmentation results on the PASCAL VOC 2012 dataset
+
 | Method         | Val (mIoU)    | Test (mIoU)    | 
 | ------------- |:-------------:|:-----:|
 |ICD (CVPR20)|67.8|68.0|

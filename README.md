@@ -77,6 +77,10 @@ Segmentation results on the MS COCO dataset
   <img src="mis/sota_coco.png" width="300" title="" >
 </p>
 
+<p align="left">
+  <img src="mis/example.png" width="720" title="" >
+</p>
+
 ## Citation
 Please consider citing our paper if the code is helpful in your research and development.
 ```

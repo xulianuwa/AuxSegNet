@@ -78,7 +78,7 @@ Segmentation results on the MS COCO dataset
 </p>
 
 <p align="left">
-  <img src="mis/example.png" width="720" title="" >
+  <img src="mis/example.jpg" width="720" title="" >
 </p>
 
 ## Citation
